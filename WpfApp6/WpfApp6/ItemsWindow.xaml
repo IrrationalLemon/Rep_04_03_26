@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfApp6.ItemsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp6"
+        mc:Ignorable="d"
+        Title="ItemsWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1" >
+            <Button x:Name="ChangeUser_btn" Content="Сменить пользователя" Click="ChangeUser_btn_Click"/>
+            <TextBlock x:Name="FullNameField" Text="" TextAlignment="Center"/>
+        </StackPanel>
+
+        <DataGrid x:Name="DGridItems" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Артикул" Width="*" Binding="{Binding Артикул}"/>
+                <DataGridTextColumn Header="Наименование товара" Width="*" Binding="{Binding НаименованиеТовара}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
